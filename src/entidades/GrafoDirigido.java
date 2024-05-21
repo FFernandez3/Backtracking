@@ -2,7 +2,7 @@ package entidades;
 
 import java.util.*;
 
-public class GrafoDirigido <T> implements Grafo{
+public class GrafoDirigido <T> implements Grafo<T>{
     private HashMap<Integer, HashSet<Arco<T>>> vertices;
     private int cantVertices;
     private int cantArcos;

@@ -13,11 +13,13 @@ public class Laberinto {
         return tablero[fila][columna];
     }
 
+    public void setCasilla(int fila, int columna, Casilla casilla) {
+        tablero[fila][columna] = casilla;
+    }
+
     public int getTamanio() {
         return tamanio;
     }
 
-    public void setTamanio(int tamanio) {
-        this.tamanio = tamanio;
-    }
+
 }
