@@ -1,7 +1,9 @@
 import ejercicios.ej2.CaminoMasCorto;
 import ejercicios.ej2.Casilla;
 import ejercicios.ej2.Laberinto;
+import ejercicios.ej3.SumaDeSubconjuntos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -42,5 +44,21 @@ public class Main {
 
         }
         System.out.println("Longitud/sumatoria de valores del camino más corto: " + caminoMasCorto.getLongitudMasCorta());
+
+        /*EJERCICIO 3-------------------------------------------------*/
+        SumaDeSubconjuntos sds = new SumaDeSubconjuntos();
+        ArrayList<Integer> conjunto = new ArrayList<>();
+        conjunto.add(1);
+        conjunto.add(3);
+        conjunto.add(8);
+        conjunto.add(7);
+        conjunto.add(2);
+        conjunto.add(5);
+        int m = 15;
+        sds.sumaSubconjuntos(conjunto, m);
+        System.out.println("EJERCICIO 3 -------------------");
+        System.out.println("Subconjuntos que suman  " + m + ": " + sds.getResultados());
+
+
     }
 }
