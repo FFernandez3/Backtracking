@@ -2,6 +2,8 @@ package ejercicios.ej3;
 
 import java.util.ArrayList;
 import java.util.List;
+/*Suma de subconjuntos. Dados n números positivos distintos, se desea encontrar todas las
+combinaciones de esos números tal que la suma sea igual a M.*/
 
 public class SumaDeSubconjuntos {
     private List<List<Integer>>resultados;

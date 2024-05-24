@@ -2,7 +2,11 @@ import ejercicios.ej2.CaminoMasCorto;
 import ejercicios.ej2.Casilla;
 import ejercicios.ej2.Laberinto;
 import ejercicios.ej3.SumaDeSubconjuntos;
+import ejercicios.ej4.ParticionDeConjunto;
+import ejercicios.ej5.Backtracking;
+import ejercicios.ej5.Tarea;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,6 +62,51 @@ public class Main {
         sds.sumaSubconjuntos(conjunto, m);
         System.out.println("EJERCICIO 3 -------------------");
         System.out.println("Subconjuntos que suman  " + m + ": " + sds.getResultados());
+
+        /*EJERCICIO 4*/
+        System.out.println("Ejercicio 4 ---------------------------");
+        List<Integer> numeros = List.of(1, 4, 3, 2);
+        ParticionDeConjunto pc = new ParticionDeConjunto(numeros);
+        List<List<Integer>> resultados = pc.puedeParticionarse();
+
+        if (resultados.isEmpty()) {
+            System.out.println("No es posible particionar el conjunto en dos subconjuntos con la misma suma.");
+        } else {
+            System.out.println("Subconjunto 1: " + resultados.get(0));
+            System.out.println("Subconjunto 2: " + resultados.get(1));
+        }
+
+        List<Integer> conjunto2 = List.of(2, 2);
+        ParticionDeConjunto pc2 = new ParticionDeConjunto(conjunto2);
+        List<List<Integer>> resultados2 = pc2.puedeParticionarse();
+
+        if (resultados2.isEmpty()) {
+            System.out.println("No es posible particionar el conjunto en dos subconjuntos con la misma suma.");
+        } else {
+            System.out.println("Subconjunto 1: " + resultados2.get(0));
+            System.out.println("Subconjunto 2: " + resultados2.get(1));
+        }
+
+        //Ejercicio 5
+        System.out.println("EJERCICIO 5 -----------------------------------");
+        List<Tarea> tareas = new ArrayList<>();
+        tareas.add(new Tarea("T1", 2));
+        tareas.add(new Tarea("T2", 3));
+        tareas.add(new Tarea("T3", 7));
+        tareas.add(new Tarea("T4", 1));
+        tareas.add(new Tarea("T5", 4));
+        tareas.add(new Tarea("T6", 5));
+
+        int cantProcesadores = 3;
+        Backtracking at = new Backtracking(tareas, cantProcesadores);
+        int resultado = at.minimizarTiempoEjecucion();
+        System.out.println("El tiempo mínimo de ejecución es: " + resultado);
+
+        List<List<Tarea>> mejorAsignacion = at.obtenerMejorAsignacion();
+        for (int i = 0; i < mejorAsignacion.size(); i++) {
+            System.out.println("Procesador " + (i + 1) + ": " + mejorAsignacion.get(i));
+        }
+
 
 
     }
